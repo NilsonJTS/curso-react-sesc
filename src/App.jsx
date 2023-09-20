@@ -2,39 +2,69 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  //const [count, setCount] = useState(0)
+
 
   const [value, setValue] = useState(2);
 
-  const handleAddTwo = () => {
-    setValue(value+2);
-  }
+  return (
+    <div>Meu App
+      <section className='section-main'>
+        <div className='container-card'>
+          <h1>Cadastrar Tarefa</h1>
+          <hr />
+          <form>
 
-const [fruit, setFruit] = useState("");
-const handleClickFruit = (currentFruit) => {
-  setFruit(currentFruit);
-}
+            <label for="title">Titulo</label>
+            <input
+              type="text"
+              name='title'
+              id='title'
+              placeholder='Digite o Título'
+            />
 
+            <label for="category">Categoria</label>
+            <select name="category" id='category'>
+              <option value="">"Selecione uma categoria"</option>
+              <option value="">"UX/UI"</option>
+              <option value="">"Testes"</option>
+            </select>
 
+            <label for="member">Membro</label>
+            <select name="member" id='member'>
+              <option value="">"Selecione um membro da equipe"</option>
+              <option value="Anderson">"Anderson"</option>
+              <option value="José">"José"</option>
+            </select>
 
- return (
-  <div>
-    <button onClick={handleAddTwo}>Somar 2</button>
-    <h1>O valor atual é {value}</h1>
+            <button className='btn-register' type='submit'>Cadastrar</button>
 
-    <button onClick={() => handleClickFruit("Maçã")}>Maçã</button>
-    <button onClick={() => handleClickFruit("Banana")}>Banana</button>
-    <button onClick={() => handleClickFruit("Morango")}>Morango</button>
+          </form>
+        </div>
+
+      </section>
+      
+      <section className='section-main'>
+        <div className='container-card'>
+          <h1>Lista de tarefas</h1>
+          <hr />
+        </div>
+      </section>
+
+      <footer className='footer-main'>
+        <p>
+          <strong>
+            Introdução ao Desenvolvimento
+            Front-End com React
+          </strong>
+        </p>
+        <em>
+          Professor: Anderson Carvalho
+        </em>
+      </footer>
+
     
-    {fruit && (
-    <h1>Você clicou em {fruit}</h1>
-    )}
-
-    {!fruit && (
-    <h1>Clique em uma fruta</h1>
-    )}
-  </div>
- ) 
+  </div >
+ )
 }
 
 export default App
